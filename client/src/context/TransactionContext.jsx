@@ -56,10 +56,11 @@ export default function TransactionProvider({ children }) {
         }
     }
 
-    const sendTransaction = async (addressTo, amount, keyword, message) => {
+    const sendTransaction = async () => {
         if (!ethereum) return alert("Please install metamask - https://metamask.io/download.html ")
         try {
-            
+            const { addressTo, amount, message, keyword } = formData
+            console.log({addressTo, amount, message, keyword})
         } catch (error) {
             console.error(error)
             throw new Error("No ethereum object")
