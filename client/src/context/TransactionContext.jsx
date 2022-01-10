@@ -22,6 +22,8 @@ const getEthereumContract = () => {
 
 export default function TransactionProvider ({ children }) {
     return (
-        <TransactionContext.Provider value={getEthereumContract()}></TransactionContext.Provider>
+        <TransactionContext.Provider value={getEthereumContract()}>
+            {children}
+        </TransactionContext.Provider>
     )
 }
