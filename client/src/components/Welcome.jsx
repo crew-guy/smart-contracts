@@ -37,7 +37,7 @@ const Welcome = () => {
                     </p>
                     <button
                         onClick={connectWallet}
-                        className='bg-[#2952e3] hover:bg-[#2546bd] p-3 rounded-full flex justify-center items-center text-white cursor-pointer'
+                        className='bg-[#2952e3] hover:bg-[#2546bd] mt-7 p-3 rounded-full flex justify-center items-center text-white cursor-pointer'
                     >
                         <p className='text-white text-base font-semibold' >Connect Wallet</p>
                     </button>
@@ -57,7 +57,7 @@ const Welcome = () => {
                         <div className={`${commonStyles}`}>
                             Low fees
                         </div>
-                        <div className={`${commonStyles}`}>
+                        <div className={`rounded-br-2xl ${commonStyles}`}>
                             Blockchain
                         </div>
                     </div>
