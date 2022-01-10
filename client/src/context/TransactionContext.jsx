@@ -1,11 +1,15 @@
-import { useEffect, createContext, useContext, useEffect } from 'react'
+import {  createContext, useContext, useEffect } from 'react'
 import { ethers } from 'ethers'
 
 import { contractABI, contractAddress } from '../utils/constants'
 
 const { ethereum } = window
 
-con
+const TransactionContext = createContext()
+
+export const useContract = () => {
+    return useContext(TransactionContext);
+}
 
 
 const getEthereumContract = () => {
@@ -16,7 +20,7 @@ const getEthereumContract = () => {
     console.log({provider, signer, transactionContract})
 }
 
-export default function TransactionProvider = ({ children }) => {
+export default function TransactionProvider ({ children }) {
     return (
         <TransactionContext.Provider value={getEthereumContract()}></TransactionContext.Provider>
     )
