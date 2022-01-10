@@ -20,14 +20,8 @@ const Input = ({ placeholder, value, type, name, handleChange }) => (
 )
 
 
-const Welcome = () => {
-    const contract = useContract()
-    console.log(`Contract is ${contract}`)
-    
-    const connectWallet = () => {
-
-    }
-
+const Welcome = () => {    
+    const {connectWallet} = useContract() 
     const handleSubmit = () => {
 
     }
@@ -94,7 +88,7 @@ const Welcome = () => {
                         {false
                             ? (<Loader />)
                             : <button
-                                onClick={handleSubmit}
+                                onClick={connectWallet}
                                 className="rounded-full text-white mt-2 border-[1px] p-2 border-[#3d4f7c] w-full cursor-pointer"
                                 type="button"
                             >
