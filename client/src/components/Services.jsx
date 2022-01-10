@@ -22,7 +22,7 @@ const ServiceCard = ({icon, color, title, subtitle}) => {
 
 const Services = () => {
     return (
-        <div className='flex w-full mf:justify-center mf:items-center gradient-bg-services' >
+        <div className='flex w-full md:px-10 mf:justify-center mf:items-center gradient-bg-services' >
             <div className="flex w-full h-full flex-col mf:flex-row items-center justify-between md:p-20 py-12 px-4">
                 <div className="flex-1 flex flex-col justify-start items-start">
                     <h1 className='text-white text-3xl sm:text-5xl py-2 text-gradient' >
@@ -38,7 +38,7 @@ const Services = () => {
                     />
                     <ServiceCard
                         icon={<BiSearchAlt fontSize={17} />}
-                        color="bg-[#89845f]"
+                        color="bg-[#8945f8]"
                         title="Best exchange rates"
                         subtitle="Security is guaranteed. We always the privacy and quality of our products."
                     />

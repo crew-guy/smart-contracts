@@ -86,6 +86,8 @@ export default function TransactionProvider({ children }) {
 
             const transactionCount = await transactionContract.getTransactionCount()
             setTransactionCount(transactionCount.toNumber())
+            window.reload()
+            document.getElementById("transactions").scrollIntoView();
         } catch (error) {
             console.error(error)
             throw new Error("No ethereum object")

@@ -14,6 +14,7 @@ const TransactionCard = ({ addressTo, addressFrom, timestamp, message, keyword, 
         sm:max-w-[300px]
         min-w-full
         flex-col p-3 rounded-md hover:shadow-2xl"
+        id="transactions"
       >
         <div className="flex flex-col items-center w-full mt-3">
           <div className="display-flex justify-start w-full mb-6 p-2">
@@ -55,7 +56,7 @@ const Transactions = () => {
                     :<h3 className="text-white text-3xl text-center my-2">Login to see your transactions</h3>
                 }
                 <div className="flex flex-wrap items-center justify-center">
-                    {transactions.reverse().map((transaction, i) => <TransactionCard key={i} {...transaction}/>  )}
+                    {[...transactions.reverse()].map((transaction, i) => <TransactionCard key={i} {...transaction}/>  )}
                 </div>
                 
             </div>
