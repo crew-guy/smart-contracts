@@ -14,7 +14,7 @@ const ServiceCard = ({icon, color, title, subtitle}) => {
                 <h3 className="mt-2 text-lg sm:text-xl font-semibold">
                     {title}
                 </h3>
-                <p className="mt-2 text-sm md:w-9/12">{ subtitle}</p>
+                <p className="my-2 text-sm md:w-9/12">{ subtitle}</p>
             </div>
         </div>
     )
