@@ -32,14 +32,14 @@ contract Transactions {
     ) public {
         transactionCount += 1;
         transactions.push(
-            TransferStruct({
-                sender: msg.sender,
-                receiver: receiver,
-                amount: amount,
-                message: message,
-                timestamp: block.timestamp,
-                keyword: keyword
-            })
+            TransferStruct(
+                msg.sender,
+                receiver,
+                amount,
+                message,
+                block.timestamp,
+                keyword
+            )
         );
     }
 
