@@ -27,7 +27,7 @@ const Welcome = () => {
         e.preventDefault()
         if(!addressTo||!amount||!keyword||!message) return alert("Please fill all fields")
 
-        sendTransaction(addressTo, amount, keyword, message)
+        sendTransaction()
     }
     return (
         <div className='flex w-full justify-center items-center' > 
