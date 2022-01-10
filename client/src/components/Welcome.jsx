@@ -21,9 +21,13 @@ const Input = ({ placeholder, value, type, name, handleChange }) => (
 
 
 const Welcome = () => {    
-    const {connectWallet, connectedAccount} = useContract() 
+    const {connectWallet, connectedAccount, formData, handleChange, sendTransaction} = useContract() 
     const handleSubmit = () => {
+        const { addressTo, amount, keyword, message } = formData
+        
+        if(!addressTo||!amount||!keyword||!message) return alert("Please fill all fields")
 
+        sendTransaction(addressTo, amount, keyword, message)
     }
     return (
         <div className='flex w-full justify-center items-center' > 

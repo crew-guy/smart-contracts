@@ -22,6 +22,11 @@ const getEthereumContract = () => {
 
 export default function TransactionProvider({ children }) {
     const [connectedAccount, setConnectedAccount] = useState(null)
+    const [formData, setFormData] = useState({ message: "", keyword: "", amount: 0, addressTo: "" })
+    
+    const handleChange = (e, name) => {
+        setFormData(prevState => ({...prevState, [name]: e.target.value}))
+    }
     
     const checkIfWalletIsConnected = async () => {
         if (!ethereum) return alert("Please install metamask - https://metamask.io/download.html ")
@@ -51,12 +56,22 @@ export default function TransactionProvider({ children }) {
         }
     }
 
+    const sendTransaction = async (addressTo, amount, keyword, message) => {
+        if (!ethereum) return alert("Please install metamask - https://metamask.io/download.html ")
+        try {
+            
+        } catch (error) {
+            console.error(error)
+            throw new Error("No ethereum object")
+        }
+    }
+
     useEffect(() => {
         checkIfWalletIsConnected()
     },[])
 
     return (
-        <TransactionContext.Provider value={{connectWallet, connectedAccount}}>
+        <TransactionContext.Provider value={{connectWallet, connectedAccount, formData, handleChange, sendTransaction}}>
             {children}
         </TransactionContext.Provider>
     )
