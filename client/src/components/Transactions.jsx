@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import { useContract } from '../context/TransactionContext'
 import  useGifFetch  from '../hooks/useGifFetch'
-import {transactions} from '../utils/dummyData'
 import { shortenAddress } from '../utils/shortenAddress'
 
 const TransactionCard = ({ addressTo, addressFrom, timestamp, message, keyword, amount, url }) => {
@@ -38,7 +37,7 @@ const TransactionCard = ({ addressTo, addressFrom, timestamp, message, keyword, 
             className="w-full h-64 2xl:h-96 rounded-md shadow-lg object-cover"
           />
           <div className="bg-black p-3 px-5 w-max rounded-3xl -mt-5 shadow-2xl">
-                    <p className="text-[#37c7da] font-bold">{timestamp.getDate().toString()},{(timestamp.getMonth()+1).toString()}, {timestamp.getFullYear().toString()}</p>
+                    <p className="text-[#37c7da] font-bold">{timestamp}</p>
           </div>
         </div>
       </div>
@@ -46,7 +45,7 @@ const TransactionCard = ({ addressTo, addressFrom, timestamp, message, keyword, 
   };
 
 const Transactions = () => {
-    const {connectedAccount} = useContract()
+    const {connectedAccount, transactions} = useContract()
 
     return (
         <div className="flex w-full justify-center gradient-bg-transactions items-center 2xl:px-20" >

@@ -22,7 +22,7 @@ const Input = ({ placeholder, value, type, name, handleChange }) => (
 
 
 const Welcome = () => {    
-    const {connectWallet, connectedAccount, formData, handleChange, sendTransaction} = useContract() 
+    const {connectWallet, connectedAccount,loading, formData, handleChange, sendTransaction} = useContract() 
     const handleSubmit = (e) => {
         const { addressTo, amount, keyword, message } = formData
         e.preventDefault()
@@ -90,7 +90,7 @@ const Welcome = () => {
                         <Input placeholder="Keyword (GIF)" name="keyword" type="text" handleChange={handleChange} />
                         <Input placeholder="Enter Message" name="message" type="text" handleChange={handleChange} />
                         <div className="h-[1px] w-full bg-gray-400 my-2" />
-                        {false
+                        {loading
                             ? (<Loader />)
                             : <button
                                 onClick={handleSubmit}
