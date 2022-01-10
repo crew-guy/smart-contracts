@@ -2,7 +2,6 @@ import {  createContext, useState, useContext, useEffect } from 'react'
 import { ethers } from 'ethers'
 
 import { contractABI, contractAddress } from '../utils/constants'
-import { parse } from 'node:path/posix'
 
 const { ethereum } = window
 
