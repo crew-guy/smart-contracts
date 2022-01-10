@@ -21,7 +21,7 @@ const Input = ({ placeholder, value, type, name, handleChange }) => (
 
 
 const Welcome = () => {    
-    const {connectWallet} = useContract() 
+    const {connectWallet, connectedAccount} = useContract() 
     const handleSubmit = () => {
 
     }
@@ -33,12 +33,12 @@ const Welcome = () => {
                     <p className='text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base' >
                         Explore the crypto world. Buy & easily sell cryptocurrencies easily on Krypto. 
                     </p>
-                    <button
+                    {!connectedAccount && <button
                         onClick={connectWallet}
                         className='bg-[#2952e3] hover:bg-[#2546bd] mt-7 p-3 rounded-full flex justify-center items-center text-white cursor-pointer'
                     >
                         <p className='text-white text-base font-semibold' >Connect Wallet</p>
-                    </button>
+                    </button>}
                     <div className="grid sm:grid-cols-3 grid-cols-2 w-full mt-10">
                         <div className={`rounded-tl-2xl ${commonStyles}`}>
                             Reliability
@@ -88,7 +88,7 @@ const Welcome = () => {
                         {false
                             ? (<Loader />)
                             : <button
-                                onClick={connectWallet}
+                                onClick={handleSubmit}
                                 className="rounded-full text-white mt-2 border-[1px] p-2 border-[#3d4f7c] w-full cursor-pointer"
                                 type="button"
                             >
